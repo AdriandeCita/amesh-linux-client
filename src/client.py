@@ -10,7 +10,7 @@ sct = mss()
 while 1:
     screenshot = sct.grab(rect)
     img = Image.frombytes(
-        "RGB", (screenshot.width, screenshot.height), bytes(screenshot.raw)
+        "RGB", (screenshot.width, screenshot.height), screenshot.rgb
     )
     cv2.imshow("test", np.array(img))
     if cv2.waitKey(25) & 0xFF == ord("q"):
